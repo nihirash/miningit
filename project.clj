@@ -1,6 +1,8 @@
-(defproject miningit "0.0.1"
+(defproject miningit "0.1.0"
   :description "Minimalist git managment tool"
-  :url "http://miningit.artisia.net/"
+  :url "https://github.com/nihirash/miningit"
+   :license {:name "GNU GENERAL PUBLIC LICENSE"
+            :url "https://www.gnu.org/licenses/gpl.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [ring/ring "1.6.3"]
                  [org.immutant/web "2.1.10"]
