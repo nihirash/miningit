@@ -6,7 +6,11 @@ Simple manager for local git repositories.
 
 ## Usage
 
-If you got precompiled version run ```java -jar miningit.jar --port <port-number>``` or just ```java -jar miningit.jar``` and configure application.
+Basicly you need only JVM and SSH-server on your machine.
+
+*Optionaly* you may create separate user(**better way**) for storing repositories. Via ```ssh-copy-id``` grant access to all developers.  
+
+If you got precompiled version run ```java -jar miningit.jar --port <port-number>``` or just ```java -jar miningit.jar``` and configure application via web interface.
 
 Or you may run it from sources with command:
 

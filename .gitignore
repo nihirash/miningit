@@ -1,3 +1,4 @@
+*.edn
 /target
 /classes
 /checkouts
