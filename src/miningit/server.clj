@@ -26,8 +26,8 @@
   (let [name (str (get (:params req) "name") ".git")
         directory (io/file (:path @config) name)]
     (if (and (.mkdir directory) (= (:exit (sh "git" "init" "--bare" :dir directory))))
-        (redirect "/")
-        (redirect (str "/new?err=" name)))))
+      (redirect "/")
+      (redirect (str "/new?err=" name)))))
 
 (defn config-update-action [req]
   (if (:trusted @config)
@@ -64,13 +64,13 @@
                       "Expires" "-1"}))))
 
 (defn -main [& args]
-    (let [args-map (apply array-map args)
+  (let [args-map (apply array-map args)
         port-str (or (get args-map "-p")
                      (get args-map "--port")
                      "8080")]
-      (read-config)
-      (println "Starting web server on port" port-str)
-      (web/run #'app {:port (Integer/parseInt port-str)})))
+    (read-config)
+    (println "Starting web server on port" port-str)
+    (web/run #'app {:port (Integer/parseInt port-str)})))
 
 (comment
   (def server (-main "--port" "8000"))

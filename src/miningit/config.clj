@@ -14,8 +14,8 @@
 
 (defn read-config []
   (some->> (safe-slurp "config.edn")
-          (edn/read-string)
-          (reset! config)))
+           (edn/read-string)
+           (reset! config)))
 
 (defn save-config [new-config]
   (reset! config new-config)

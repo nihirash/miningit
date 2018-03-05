@@ -1,0 +1,13 @@
+[Unit]
+Description=MininGit - local git manager
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/java -jar /home/git/miningit.jar --port 8000
+RemainAfterExit=yes
+User=git
+Group=git
+WorkingDirectory=/home/git
+
+[Install]
+WantedBy=multi-user.target

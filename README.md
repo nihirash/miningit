@@ -18,6 +18,10 @@ Or you may run it from sources with command:
 lein run
 ```
 
+Sample configs for systemd and apache2 are in folder ```config.samples```.
+
+Feel free to contact me with any questions!  
+
 ## License
 
 This software includes [min css framework](https://github.com/owenversteeg/min) thats licensed under MIT License.

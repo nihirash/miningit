@@ -1,5 +1,5 @@
 (ns miningit.core
-    (:require [clojure.string :as str]
+  (:require [clojure.string :as str]
             [clojure.java.io :as io]
             [clojure.java.shell :as sh])
   (:use [miningit.config]))

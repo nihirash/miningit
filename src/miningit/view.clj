@@ -70,9 +70,9 @@
    [:h1 repo]
    [:h2 "Latest commits"]
    [:p "For cloning repository execute:"
-   [:input {:type "text"
-            :readonly true
-            :value (str "git clone " (:clone-path @config) ":" (:path @config) "/" repo)}]]
+    [:input {:type "text"
+             :readonly true
+             :value (str "git clone " (:clone-path @config) ":" (:path @config) "/" repo)}]]
    (commit-list repo)
    (when (:trusted @config)
      (list
@@ -105,27 +105,27 @@
 
 (defn config-page []
   (if (:trusted @config)
-  (common-page-template
-   "configuration page"
-   [:h1 "Configuration"]
-   [:form {:method "post"
-           :action "/config"}
-    [:p "Path where repositories are stored: "
-     [:input {:type "text"
-              :name "path"
-              :value (:path @config)}]]
-    [:p "Git path prefix: "
-     [:input {:type "text"
-              :name "clone-path"
-              :value (:clone-path @config)}]]
-    [:p
-     [:input {:type "checkbox"
-              :name "trusted"
-              :checked true}]
-     " Running in trusted mode (possible to remove repositories and change settings)"]
-    [:p [:b "NB! "] "Trusted flag can be enabled  only by hands in configuration file"]
-    [:button.btn.btn-sm.btn-a "Update config"]])
-  {:status 405 :body "Not in trusted mode"}))
+    (common-page-template
+     "configuration page"
+     [:h1 "Configuration"]
+     [:form {:method "post"
+             :action "/config"}
+      [:p "Path where repositories are stored: "
+       [:input {:type "text"
+                :name "path"
+                :value (:path @config)}]]
+      [:p "Git path prefix: "
+       [:input {:type "text"
+                :name "clone-path"
+                :value (:clone-path @config)}]]
+      [:p
+       [:input {:type "checkbox"
+                :name "trusted"
+                :checked true}]
+       " Running in trusted mode (possible to remove repositories and change settings)"]
+      [:p [:b "NB! "] "Trusted flag can be enabled  only by hands in configuration file"]
+      [:button.btn.btn-sm.btn-a "Update config"]])
+    {:status 405 :body "Not in trusted mode"}))
 
 (defn about-page []
   (common-page-template
